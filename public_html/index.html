@@ -1,0 +1,40 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Test</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body id="body">
+        <div title="a">
+            <script src="http://codeorigin.jquery.com/jquery-2.0.3.js"></script>
+            <!-- TOBE remotes START -->
+            <script src="http://crisma.cismet.de/lib/js/de/cismet/Namespace/snapshot/Namespace.js"></script>
+            <script src="http://crisma.cismet.de/lib/js/de/cismet/cids/cids.js"></script>
+            <script src="http://crisma.cismet.de/lib/js/de/cismet/cids/pure_rest_backend.js"></script>
+            <script src="http://crisma.cismet.de/lib/js/de/cismet/Tools/snapshot/Tools.js"></script>
+            <!-- TOBE remotes END -->
+            <script src="js/scenario-list-widget.js"></script>
+            <script type="text/javascript">
+                var slw = de.cismet.crisma.Scenario_list_widget;
+                var widget = slw.createWidget(document.getElementById('body'), 'crisma');
+                widget.setBackend(ci);
+                widget.updateWorldstates();
+                
+                var l1 = function(ws){
+                    alert('l1: ' + ws.id)
+                };
+                widget.addWorldstateSelectionChangedListener(l1);
+//                var l2 = function(wsId){
+//                    alert('l2: ' + wsId);
+//                };
+//                widget.addWorldstateChangedListener(l2);
+//                
+//                widget.setWorldstate(58);
+            </script>
+        </div>
+    </body>
+</html>
